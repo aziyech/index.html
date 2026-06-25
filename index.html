@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roadmap de création d'une marque streetwear ivoirienne — Brice & AZ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050505;
+      --surface: #0f0f11;
+      --surface-card: #151518;
+      --border: #222226;
+      --border-hover: #33333d;
+      --orange: #FF5A00;
+      --orange-rgb: 255, 90, 0;
+      --text: #f0f0f5;
+      --text-muted: #8a8a93;
+      --white: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.5);
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body.light-mode {
+      --bg: #f4f4f7;
+      --surface: #ffffff;
+      --surface-card: #f9f9fb;
+      --border: #e1e1e8;
+      --border-hover: #cbd5e1;
+      --text: #0f0f11;
+      --text-muted: #64748b;
+      --white: #000000;
+      --shadow: rgba(15, 15, 17, 0.05);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    html {
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    body {
+      min-height: 100vh;
+      line-height: 1.5;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      padding-bottom: 60px;
+    }
+
+    body.light-mode {
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 0 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      right: -50px;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(var(--orange-rgb), 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(var(--orange-rgb), 0.1);
+      border: 1px solid rgba(var(--orange-rgb), 0.2);
+      color: var(--orange);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(40px, 6vw, 76px);
+      line-height: 0.95;
+      color: var(--white);
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    header h1 span {
+      color: var(--orange);
+    }
+
+    .header-desc {
+      color: var(--text-muted);
+      font-size: 16px;
+      max-width: 680px;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+
+    .top-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .meta-pills {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .pill strong {
+      color: var(--white);
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      background: var(--surface-card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      border-color: var(--border-hover);
+      background: var(--border);
+      outline: none;
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: #fff;
+      border: 1px solid var(--orange);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: var(--orange-hover);
+      border-color: var(--orange-hover);
+    }
+
+    .sticky-nav-container {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(var(--bg), 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sticky-nav {
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 14px 0;
+      gap: 8px;
+      scrollbar-width: none;
+    }
+
+    .sticky-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      color: var(--white);
+      background: var(--surface-card);
+      outline: none;
+    }
+
+    .nav-link.active {
+      color: var(--orange);
+      background: rgba(var(--orange-rgb), 0.1);
+      border-color: rgba(var(--orange-rgb), 0.2);
+      font-weight: 600;
+    }
+
+    .dashboard-status-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 40px 0;
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+
+    .status-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .status-title {
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+
+    .status-percentage {
+      font-family: 'DM Mono', monospace;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--orange);
+    }
+
+    .progress-bar-container {
+      background: var(--border);
+      height: 10px;
+      border-radius: 100px;
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+
+    .progress-bar-fill {
+      background: linear-gradient(90deg, var(--orange) 0%, #ff8800 100%);
+      height: 100%;
+      width: 0%;
+      border-radius: 100px;
+      transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .section-title-main {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title-main::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .resources-wrapper,
+    .months-wrapper {
+      margin-bottom: 56px;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 20px;
+    }
+
+    .resource-cat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: var(--transition);
+    }
+
+    .resource-cat-card:hover,
+    .resource-cat-card:focus-within {
+      border-color: var(--border-hover);
+      box-shadow: 0 4px 15px var(--shadow);
+    }
+
+    .cat-header {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 0.5px;
+      color: var(--orange);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .cat-count {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      background: var(--surface-card);
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+
+    .links-list {
+      list-style: none;
+    }
+
+    .links-list li {
+      margin-bottom: 12px;
+    }
+
+    .links-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .resource-item-link {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      padding: 10px 12px;
+      background: var(--surface-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      transition: var(--transition);
+    }
+
+    .resource-item-link:hover,
+    .resource-item-link:focus-visible {
+      border-color: var(--orange);
+      background: rgba(var(--orange-rgb), 0.02);
+      transform: translateX(2px);
+      outline: none;
+    }
+
+    .link-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .link-top svg {
+      width: 13px;
+      height: 13px;
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+
+    .resource-item-link:hover .link-top svg,
+    .resource-item-link:focus-visible .link-top svg {
+      color: var(--orange);
+      transform: translate(1px, -1px);
+    }
+
+    .link-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .months-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .accordion-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .accordion-item.active-month {
+      border-color: rgba(var(--orange-rgb), 0.4);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .accordion-header {
+      width: 100%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      background: var(--surface);
+      transition: var(--transition);
+      border: none;
+      padding: 22px 24px;
+      text-align: left;
+      color: inherit;
+    }
+
+    .accordion-header:hover,
+    .accordion-header:focus-visible {
+      background: var(--surface-card);
+      outline: none;
+    }
+
+    .acc-title-side {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .acc-num-badge {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px;
+      color: var(--orange);
+      background: rgba(var(--orange-rgb), 0.08);
+      border: 1px solid rgba(var(--orange-rgb), 0.15);
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .acc-meta-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .acc-heading {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .acc-subheading {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 2px;
+    }
+
+    .acc-right-side {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .acc-month-progress {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      background: var(--surface-card);
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-muted);
+    }
+
+    .acc-chevron {
+      width: 20px;
+      height: 20px;
+      color: var(--text-muted);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      flex-shrink: 0;
+    }
+
+    .accordion-item.expanded .acc-chevron {
+      transform: rotate(180deg);
+      color: var(--orange);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      border-top: 1px solid transparent;
+      background: var(--surface-card);
+    }
+
+    .accordion-item.expanded .accordion-content {
+      max-height: 1200px;
+      border-color: var(--border);
+    }
+
+    .content-inner {
+      padding: 24px;
+    }
+
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .role-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .role-block-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .title-brice { color: #58a6ff; }
+    .title-az { color: #ff7b72; }
+
+    .tasks-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .task-checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 13.5px;
+      color: var(--text);
+      cursor: pointer;
+      position: relative;
+      user-select: none;
+      line-height: 1.4;
+    }
+
+    .task-checkbox-label input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .custom-checkbox {
+      width: 18px;
+      height: 18px;
+      background-color: var(--surface-card);
+      border: 2px solid var(--border);
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .task-checkbox-label:hover input ~ .custom-checkbox,
+    .task-checkbox-label:focus-within input ~ .custom-checkbox {
+      border-color: var(--text-muted);
+    }
+
+    .task-checkbox-label input:checked ~ .custom-checkbox {
+      background-color: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .custom-checkbox::after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 5px;
+      top: 2px;
+      width: 4px;
+      height: 8px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .task-checkbox-label input:checked ~ .custom-checkbox::after {
+      display: block;
+    }
+
+    .task-text {
+      transition: var(--transition);
+    }
+
+    .task-checkbox-label input:checked ~ .task-text {
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    footer p {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    footer p span {
+      color: var(--orange);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 768px) {
+      header { padding: 40px 0 30px; }
+      .top-controls { flex-direction: column; align-items: flex-start; }
+      .action-buttons { width: 100%; }
+      .btn { flex: 1; justify-content: center; }
+      .resources-grid { grid-template-columns: 1fr; }
+      .roles-grid { grid-template-columns: 1fr; }
+      .accordion-header { padding: 16px; }
+      .acc-title-side { gap: 12px; }
+      .acc-num-badge { width: 44px; height: 44px; font-size: 22px; }
+      .acc-heading { font-size: 15px; }
+      .acc-month-progress { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-badge">
+        <span aria-hidden="true" style="color: var(--orange);">●</span> Stratégie de Marque 2026-2027
+      </div>
+      <h1>Roadmap de création d'une marque <br>streetwear ivoirienne — <span>Brice & AZ</span></h1>
+      <p class="header-desc">L'alliance de la vision artistique et de la rigueur business. Ce tableau de bord permet de piloter pas à pas l'apprentissage et le déploiement opérationnel sur 12 mois pour concrétiser votre premier drop.</p>
+      <div class="top-controls">
+        <div class="meta-pills">
+          <div class="pill">Directeur Artistique : <strong>Brice (75% Créa / 25% Biz)</strong></div>
+          <div class="pill">Directeur Business : <strong>AZ (75% Biz / 25% Créa)</strong></div>
+          <div class="pill">Zone de Lancement : <strong>Abidjan, Côte d'Ivoire 🇨🇮</strong></div>
+        </div>
+        <div class="action-buttons">
+          <button type="button" class="btn" id="theme-toggle" title="Changer de thème" aria-pressed="false">
+            <svg style="width:16px;height:16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M16.243 17.657l.707.707M6.343 6.343l.707-.707M12 5a7 7 0 100 14 7 7 0 000-14z"></path></svg>
+            <span id="theme-text">Mode Clair</span>
+          </button>
+          <button type="button" class="btn btn-primary" id="export-btn" aria-label="Exporter la progression en JSON">
+            <svg style="width:16px;height:16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            Exporter la progression
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section aria-labelledby="project-progress" class="dashboard-status-card">
+      <div class="status-header">
+        <div class="status-title" id="project-progress">État d'avancement du projet</div>
+        <div class="status-percentage" id="global-percentage" aria-live="polite" aria-atomic="true">0%</div>
+      </div>
+      <div class="progress-bar-container" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="global-progress-bar-container">
+        <div class="progress-bar-fill" id="global-progress-bar"></div>
+      </div>
+    </section>
+
+    <div class="sticky-nav-container" role="navigation" aria-label="Navigation du tableau de bord">
+      <nav class="container sticky-nav">
+        <a href="#ressources" class="nav-link active">Ressources</a>
+        <a href="#m1" class="nav-link">M1</a>
+        <a href="#m2" class="nav-link">M2</a>
+        <a href="#m3" class="nav-link">M3</a>
+        <a href="#m4" class="nav-link">M4</a>
+        <a href="#m5" class="nav-link">M5</a>
+        <a href="#m6" class="nav-link">M6</a>
+        <a href="#m7" class="nav-link">M7</a>
+        <a href="#expansion" class="nav-link">Expansion</a>
+      </nav>
+    </div>
+
+    <section id="ressources" class="resources-wrapper">
+      <h2 class="section-title-main">Ressources d'apprentissage stratégiques</h2>
+      <div class="resources-grid">
+        <article class="resource-cat-card">
+          <div class="cat-header">Design Visuel <span class="cat-count">5 cours</span></div>
+          <ul class="links-list">
+            <li><a href="https://www.youtube.com/watch?v=ak2sUzv_BVk" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Adobe Illustrator Tutorial</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Maîtriser les tracés vectoriels et dessins techniques de mode sur Illustrator.</div></a></li>
+            <li><a href="https://www.youtube.com/watch?v=IyR_K20rgoc" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Adobe Photoshop Tutorial</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Bases fondamentales du traitement d'image et création de mockups textiles réalistes.</div></a></li>
+            <li><a href="https://99designs.fr/blog/conseils-design/theorie-du-design-de-logo/" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Logo Design Theory</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Les règles indispensables pour concevoir un logo percutant, mémorable et intemporel.</div></a></li>
+            <li><a href="https://fonts.google.com/knowledge" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Typography Fundamentals</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Encyclopédie Google Fonts pour comprendre les empattements, la hiérarchie et l'espacement.</div></a></li>
+            <li><a href="https://99designs.fr/blog/conseils-design/la-theorie-des-couleurs/" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Colour Theory</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Sélectionner des palettes harmonieuses basées sur le cercle chromatique et la psychologie.</div></a></li>
+          </ul>
+        </article>
+        <article class="resource-cat-card">
+          <div class="cat-header">Connaissance Textile <span class="cat-count">4 modules</span></div>
+          <ul class="links-list">
+            <li><a href="https://textileaddict.me/les-differentes-fibres-textiles/" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Introduction aux tissus</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Comprendre les fibres naturelles (coton, lin) et synthétiques employées en streetwear.</div></a></li>
+            <li><a href="https://www.textile-lab.fr/comprendre-le-grammage-gsm/" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Différence GSM et qualité</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Maîtriser le calcul du grammage (Grammes par Mètre Carré) pour obtenir des tissus lourds.</div></a></li>
+            <li><a href="https://www.youtube.com/watch?v=17XW_7bS46g" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Création de Tech Packs</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Modèle complet de fiches techniques d'habillement à destination des usines et ateliers.</div></a></li>
+            <li><a href="https://textileaddict.me/les-etapes-de-fabrication-dun-vetement/" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Bases de la confection</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Étapes du prototypage, patronage, gradation de tailles et phases de piquage industriel.</div></a></li>
+          </ul>
+        </article>
+        <article class="resource-cat-card">
+          <div class="cat-header">Business de la Mode <span class="cat-count">6 modules</span></div>
+          <ul class="links-list">
+            <li><a href="https://www.shopify.com/fr/blog/qu-est-ce-que-le-branding" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Branding</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Bâtir un univers de marque différenciant au-delà du simple produit basique.</div></a></li>
+            <li><a href="https://blog.hubspot.fr/marketing/storytelling-definition" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Storytelling</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Structurer le récit de la marque pour susciter l'attachement émotionnel de la communauté.</div></a></li>
+            <li><a href="https://www.definitions-marketing.com/definition/positionnement-de-marque/" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Positionnement de marque</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Définir sa cible, sa proposition de valeur unique et cartographier ses concurrents directs.</div></a></li>
+            <li><a href="https://www.economie.gouv.fr/entreprises/calculer-prix-de-vente" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Calcul du coût de revient</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Méthodologie ministérielle officielle pour intégrer les coûts fixes, variables et annexes.</div></a></li>
+            <li><a href="https://calcul-marge.fr/" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Calcul de marge</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Outil de simulation instantanée pour définir ses coefficients multiplicateurs de vente.</div></a></li>
+            <li><a href="https://www.shopify.com/fr/blog/precommande" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Gestion des Précommandes</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Stratégie de financement participatif pour lancer une production sans capital initial.</div></a></li>
+          </ul>
+        </article>
+        <article class="resource-cat-card">
+          <div class="cat-header">Marketing & Lancement <span class="cat-count">4 cours</span></div>
+          <ul class="links-list">
+            <li><a href="https://www.tiktok.com/creator-academy/" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>TikTok Creator Academy</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Règles algorithmiques officielles, tendances et formats vidéo à forte viralité.</div></a></li>
+            <li><a href="https://fr-fr.facebook.com/business/learn/courses/instagram" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Instagram Growth</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Formations Meta Blueprint pour optimiser l'engagement organique et le format Reels.</div></a></li>
+            <li><a href="https://www.hubspot.com/marketing/community-building" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Community Building</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Fidéliser une audience d'ambassadeurs actifs à travers des boucles d'engagement fermées.</div></a></li>
+            <li><a href="https://www.shopify.com/fr/blog/marketing-influence" target="_blank" rel="noopener noreferrer" class="resource-item-link"><div class="link-top"><span>Influence Marketing</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div><div class="link-desc">Identifier, contacter et négocier des partenariats pertinents avec des créateurs de contenu.</div></a></li>
+          </ul>
+        </article>
+        <article class="resource-cat-card" style="grid-column: span 1;">
+          <div class="cat-header">Outils de production Gratuits <span class="cat-count">7 apps</span></div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px;">
+            <a href="https://www.canva.com" target="_blank" rel="noopener noreferrer" class="btn">🎨 Canva</a>
+            <a href="https://www.figma.com" target="_blank" rel="noopener noreferrer" class="btn">💎 Figma</a>
+            <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer" class="btn">📌 Pinterest</a>
+            <a href="https://sheets.google.com" target="_blank" rel="noopener noreferrer" class="btn">📊 G-Sheets</a>
+            <a href="https://www.notion.so" target="_blank" rel="noopener noreferrer" class="btn">📋 Notion</a>
+            <a href="https://www.photopea.com" target="_blank" rel="noopener noreferrer" class="btn">🖌️ Photopea</a>
+            <a href="https://www.capcut.com" target="_blank" rel="noopener noreferrer" class="btn">🎬 CapCut</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="months-wrapper" aria-labelledby="schedule-title">
+      <h2 class="section-title-main" id="schedule-title">Calendrier d'exécution et tâches réparties</h2>
+
+      <article class="accordion-item" id="m1">
+        <button type="button" class="accordion-header" id="accordion-m1" aria-expanded="true" aria-controls="panel-m1">
+          <div class="acc-title-side">
+            <div class="acc-num-badge">M1</div>
+            <div class="acc-meta-text">
+              <div class="acc-heading">Fondations Culturelles & Présence Digitale</div>
+              <div class="acc-subheading">Mois 1 — Juillet 2026</div>
+            </div>
+          </div>
+          <div class="acc-right-side">
+            <span class="acc-month-progress">0/4 validé</span>
+            <svg class="acc-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+        </button>
+        <div id="panel-m1" class="accordion-content" role="region" aria-labelledby="accordion-m1">
+          <div class="content-inner">
+            <div class="roles-grid">
+              <div class="role-block">
+                <div class="role-block-title title-brice">🧵 Brice (L'Âme / Création)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m1-b1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Étudier les guides techniques textiles d'introduction aux fibres pour maîtriser les bases des tissages.</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m1-b2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Constituer sur Pinterest un tableau d'inspiration (moodboard) de 50+ visuels urbains ivoiriens.</span>
+                  </label>
+                </div>
+              </div>
+              <div class="role-block">
+                <div class="role-block-title title-az">⚡ AZ (Le Moteur / Business)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m1-a1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Valider l'ensemble du cursus gratuit de la TikTok Creator Academy pour analyser les formats vidéo porteurs.</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m1-a2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Mettre en place la structure financière de départ (compte Mobile Money dédié) pour centraliser l'épargne.</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="accordion-item" id="m2">
+        <button type="button" class="accordion-header" id="accordion-m2" aria-expanded="false" aria-controls="panel-m2">
+          <div class="acc-title-side">
+            <div class="acc-num-badge">M2</div>
+            <div class="acc-meta-text">
+              <div class="acc-heading">Identité Visuelle & Storytelling de Marque</div>
+              <div class="acc-subheading">Mois 2 — Août 2026</div>
+            </div>
+          </div>
+          <div class="acc-right-side">
+            <span class="acc-month-progress">0/4 validé</span>
+            <svg class="acc-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+        </button>
+        <div id="panel-m2" class="accordion-content" role="region" aria-labelledby="accordion-m2">
+          <div class="content-inner">
+            <div class="roles-grid">
+              <div class="role-block">
+                <div class="role-block-title title-brice">🧵 Brice (L'Âme / Création)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m2-b1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Suivre une formation d'initiation approfondie sur Adobe Illustrator pour maîtriser l'espace vectoriel.</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m2-b2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Concevoir 3 déclinaisons typographiques et graphiques du logo principal de la marque.</span>
+                  </label>
+                </div>
+              </div>
+              <div class="role-block">
+                <div class="role-block-title title-az">⚡ AZ (Le Moteur / Business)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m2-a1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Rédiger le manifeste de la marque (Storytelling) définissant l'origine et l'intention culturelle du projet.</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m2-a2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Déployer les premiers formats vidéo de type coulisses ("behind the brand") sur Instagram et TikTok.</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="accordion-item" id="m3">
+        <button type="button" class="accordion-header" id="accordion-m3" aria-expanded="false" aria-controls="panel-m3">
+          <div class="acc-title-side">
+            <div class="acc-num-badge">M3</div>
+            <div class="acc-meta-text">
+              <div class="acc-heading">Design Graphique, Sourcing & Modèles Coût</div>
+              <div class="acc-subheading">Mois 3 — Septembre 2026</div>
+            </div>
+          </div>
+          <div class="acc-right-side">
+            <span class="acc-month-progress">0/4 validé</span>
+            <svg class="acc-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+        </button>
+        <div id="panel-m3" class="accordion-content" role="region" aria-labelledby="accordion-m3">
+          <div class="content-inner">
+            <div class="roles-grid">
+              <div class="role-block">
+                <div class="role-block-title title-brice">🧵 Brice (L'Âme / Création)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m3-b1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Réaliser une session de sourcing terrain sur les marchés d'Abidjan pour évaluer les qualités et les prix au mètre.</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m3-b2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Esquisser les 5 premiers croquis de silhouettes en y intégrant les contraintes de coupes spécifiques.</span>
+                  </label>
+                </div>
+              </div>
+              <div class="role-block">
+                <div class="role-block-title title-az">⚡ AZ (Le Moteur / Business)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m3-a1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Formaliser un tableau Google Sheets automatisé de calcul des coûts de revient (matières + façon + logistique).</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m3-a2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Co-étudier les bases des fiches techniques d'habillement avec Brice afin de valider la faisabilité financière des pièces.</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="accordion-item" id="m4">
+        <button type="button" class="accordion-header" id="accordion-m4" aria-expanded="false" aria-controls="panel-m4">
+          <div class="acc-title-side">
+            <div class="acc-num-badge">M4</div>
+            <div class="acc-meta-text">
+              <div class="acc-heading">Fiches Techniques & Prototypage Atelier</div>
+              <div class="acc-subheading">Mois 4 — Octobre 2026</div>
+            </div>
+          </div>
+          <div class="acc-right-side">
+            <span class="acc-month-progress">0/4 validé</span>
+            <svg class="acc-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+        </button>
+        <div id="panel-m4" class="accordion-content" role="region" aria-labelledby="accordion-m4">
+          <div class="content-inner">
+            <div class="roles-grid">
+              <div class="role-block">
+                <div class="role-block-title title-brice">🧵 Brice (L'Âme / Création)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m4-b1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Rédiger le premier Tech Pack complet (mesures, matériaux, coutures, placements graphiques).</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m4-b2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Lancer officiellement la confection du tout premier prototype physique auprès d'un tailleur sélectionné à Abidjan.</span>
+                  </label>
+                </div>
+              </div>
+              <div class="role-block">
+                <div class="role-block-title title-az">⚡ AZ (Le Moteur / Business)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m4-a1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Cartographier et lister une sélection de 10 micro-influenceurs locaux alignés avec l'univers de la marque.</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m4-a2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Intégrer et animer les premiers abonnés au sein d'un canal de discussion fermé (type groupe VIP WhatsApp).</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="accordion-item" id="m5">
+        <button type="button" class="accordion-header" id="accordion-m5" aria-expanded="false" aria-controls="panel-m5">
+          <div class="acc-title-side">
+            <div class="acc-num-badge">M5</div>
+            <div class="acc-meta-text">
+              <div class="acc-heading">Ajustement du Prototype & Acquisition Clients</div>
+              <div class="acc-subheading">Mois 5 — Novembre 2026</div>
+            </div>
+          </div>
+          <div class="acc-right-side">
+            <span class="acc-month-progress">0/4 validé</span>
+            <svg class="acc-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+        </button>
+        <div id="panel-m5" class="accordion-content" role="region" aria-labelledby="accordion-m5">
+          <div class="content-inner">
+            <div class="roles-grid">
+              <div class="role-block">
+                <div class="role-block-title title-brice">🧵 Brice (L'Âme / Création)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m5-b1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Analyser le prototype reçu, lister les erreurs de coupe ou de tombé, et appliquer les rectifications nécessaires.</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m5-b2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Participer activement aux côtés d'AZ à la validation de la grille des tailles et des options de packaging.</span>
+                  </label>
+                </div>
+              </div>
+              <div class="role-block">
+                <div class="role-block-title title-az">⚡ AZ (Le Moteur / Business)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m5-a1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Étudier les architectures logistiques de livraison locale et mettre en place une page de capture de contacts.</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m5-a2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Engager les premières discussions de placement produit (dotation d'échantillons) auprès des influenceurs ciblés.</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="accordion-item" id="m6">
+        <button type="button" class="accordion-header" id="accordion-m6" aria-expanded="false" aria-controls="panel-m6">
+          <div class="acc-title-side">
+            <div class="acc-num-badge">M6</div>
+            <div class="acc-meta-text">
+              <div class="acc-heading">Lancement Production & Stratégie Content Hype</div>
+              <div class="acc-subheading">Mois 6 — Décembre 2026</div>
+            </div>
+          </div>
+          <div class="acc-right-side">
+            <span class="acc-month-progress">0/4 validé</span>
+            <svg class="acc-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+        </button>
+        <div id="panel-m6" class="accordion-content" role="region" aria-labelledby="accordion-m6">
+          <div class="content-inner">
+            <div class="roles-grid">
+              <div class="role-block">
+                <div class="role-block-title title-brice">🧵 Brice (L'Âme / Création)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m6-b1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Valider le prototype finalisé et lancer la fabrication en série limitée (série test de 20-30 pièces).</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m6-b2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Superviser directement en atelier le contrôle qualité (solidité des coutures, propreté des finitions intérieures).</span>
+                  </label>
+                </div>
+              </div>
+              <div class="role-block">
+                <div class="role-block-title title-az">⚡ AZ (Le Moteur / Business)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m6-a1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Orchestrer le shooting éditorial urbain complet en extérieur pour la création des fiches produits et des visuels publicitaires.</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m6-a2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Planifier la campagne de compte à rebours et ouvrir le système de pré-réservation sur le canal WhatsApp Pro.</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="accordion-item" id="m7">
+        <button type="button" class="accordion-header" id="accordion-m7" aria-expanded="false" aria-controls="panel-m7">
+          <div class="acc-title-side">
+            <div class="acc-num-badge">M7</div>
+            <div class="acc-meta-text">
+              <div class="acc-heading">Jour J : Déploiement Opérationnel du Drop 1</div>
+              <div class="acc-subheading">Mois 7 — Janvier / Février 2027</div>
+            </div>
+          </div>
+          <div class="acc-right-side">
+            <span class="acc-month-progress">0/4 validé</span>
+            <svg class="acc-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+        </button>
+        <div id="panel-m7" class="accordion-content" role="region" aria-labelledby="accordion-m7">
+          <div class="content-inner">
+            <div class="roles-grid">
+              <div class="role-block">
+                <div class="role-block-title title-brice">🧵 Brice (L'Âme / Création)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m7-b1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Assurer la préparation soignée de chaque colis, étiquetage et insertion des éléments de branding physiques.</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m7-b2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Recueillir et consigner par écrit les premiers retours techniques clients relatifs au confort et au taillage des pièces.</span>
+                  </label>
+                </div>
+              </div>
+              <div class="role-block">
+                <div class="role-block-title title-az">⚡ AZ (Le Moteur / Business)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m7-a1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Ouvrir officiellement les ventes en ligne, valider les encaissements Mobile Money et suivre la logistique des livreurs.</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m7-a2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Calculer le bilan comptable complet de la première journée de vente (marge nette réelle dégagée).</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="accordion-item" id="expansion">
+        <button type="button" class="accordion-header" id="accordion-expansion" aria-expanded="false" aria-controls="panel-expansion">
+          <div class="acc-title-side">
+            <div class="acc-num-badge">M8+</div>
+            <div class="acc-meta-text">
+              <div class="acc-heading">Sécurisation Légale & Phase d'Expansion</div>
+              <div class="acc-subheading">Mois 8 à 12 — Horizon mi-2027</div>
+            </div>
+          </div>
+          <div class="acc-right-side">
+            <span class="acc-month-progress">0/4 validé</span>
+            <svg class="acc-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+        </button>
+        <div id="panel-expansion" class="accordion-content" role="region" aria-labelledby="accordion-expansion">
+          <div class="content-inner">
+            <div class="roles-grid">
+              <div class="role-block">
+                <div class="role-block-title title-brice">🧵 Brice (L'Âme / Création)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m8-b1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Démarrer l'apprentissage de la modélisation et du patronat 3D numérique via le logiciel de référence CLO 3D.</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m8-b2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Développer les concepts et fiches techniques avancés pour préparer le Drop Numéro 2.</span>
+                  </label>
+                </div>
+              </div>
+              <div class="role-block">
+                <div class="role-block-title title-az">⚡ AZ (Le Moteur / Business)</div>
+                <div class="tasks-list">
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m8-a1">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Réaliser les démarches de dépôt de marque et logo à l'OAPI pour prémunir le projet contre la contrefaçon.</span>
+                  </label>
+                  <label class="task-checkbox-label">
+                    <input type="checkbox" class="task-trigger" data-task-id="m8-a2">
+                    <span class="custom-checkbox"></span>
+                    <span class="task-text">Lancer le déploiement d'une boutique en ligne autonome (type Shopify) pour structurer durablement les canaux d'acquisition.</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026-2027 Brice & AZ · Développé avec rigueur et passion · Conçu pour propulser le streetwear <span>ivoirien</span>.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const storageKey = 'streetwear_roadmap_progress';
+      const themeKey = 'streetwear_roadmap_theme';
+
+      const accordionButtons = document.querySelectorAll('.accordion-header');
+      const checkboxes = document.querySelectorAll('.task-trigger');
+      const exportBtn = document.getElementById('export-btn');
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeText = document.getElementById('theme-text');
+      const progressText = document.getElementById('global-percentage');
+      const progressBar = document.getElementById('global-progress-bar');
+      const progressBarContainer = document.getElementById('global-progress-bar-container');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('section[id], .accordion-item[id]');
+
+      const supportsLocalStorage = (() => {
+        try {
+          const testKey = '__storage_test__';
+          window.localStorage.setItem(testKey, testKey);
+          window.localStorage.removeItem(testKey);
+          return true;
+        } catch (error) {
+          console.warn('Local Storage n\'est pas disponible :', error);
+          return false;
+        }
+      })();
+
+      function safeParseJSON(value) {
+        try {
+          return JSON.parse(value);
+        } catch (error) {
+          return null;
+        }
+      }
+
+      function setTheme(isLight) {
+        document.body.classList.toggle('light-mode', isLight);
+        themeText.innerText = isLight ? 'Mode Sombre' : 'Mode Clair';
+        themeToggle.setAttribute('aria-pressed', String(isLight));
+      }
+
+      function loadTheme() {
+        if (!supportsLocalStorage) {
+          setTheme(false);
+          return;
+        }
+
+        const savedTheme = window.localStorage.getItem(themeKey);
+        if (savedTheme === 'light') {
+          setTheme(true);
+        } else {
+          setTheme(false);
+        }
+      }
+
+      function saveTheme(isLight) {
+        if (!supportsLocalStorage) return;
+        window.localStorage.setItem(themeKey, isLight ? 'light' : 'dark');
+      }
+
+      function setExpandedState(button, expanded) {
+        button.setAttribute('aria-expanded', String(expanded));
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        if (panel) {
+          panel.style.maxHeight = expanded ? panel.scrollHeight + 'px' : null;
+        }
+      }
+
+      function collapseAllAccordions() {
+        accordionButtons.forEach(button => setExpandedState(button, false));
+      }
+
+      accordionButtons.forEach(button => {
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        if (panel && button.getAttribute('aria-expanded') === 'true') {
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+
+        button.addEventListener('click', () => {
+          const expanded = button.getAttribute('aria-expanded') === 'true';
+          setExpandedState(button, !expanded);
+          button.parentElement.classList.toggle('expanded', !expanded);
+        });
+      });
+
+      function saveProgress(states) {
+        if (!supportsLocalStorage) return;
+        try {
+          window.localStorage.setItem(storageKey, JSON.stringify(states));
+        } catch (error) {
+          console.warn('Impossible de sauvegarder la progression :', error);
+        }
+      }
+
+      function loadSavedProgress() {
+        if (!supportsLocalStorage) return;
+        const savedData = window.localStorage.getItem(storageKey);
+        const state = safeParseJSON(savedData) || {};
+
+        checkboxes.forEach(cb => {
+          const taskId = cb.getAttribute('data-task-id');
+          cb.checked = !!state[taskId];
+        });
+
+        calculateAllProgress();
+      }
+
+      function getCurrentStates() {
+        const states = {};
+        checkboxes.forEach(cb => {
+          const taskId = cb.getAttribute('data-task-id');
+          states[taskId] = cb.checked;
+        });
+        return states;
+      }
+
+      function calculateAllProgress() {
+        const totalTasks = checkboxes.length;
+        const checkedCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+        const globalPercent = totalTasks > 0 ? Math.round((checkedCount / totalTasks) * 100) : 0;
+
+        progressText.innerText = `${globalPercent}%`;
+        progressBar.style.width = `${globalPercent}%`;
+        progressBarContainer.setAttribute('aria-valuenow', String(globalPercent));
+
+        document.querySelectorAll('.accordion-item').forEach(month => {
+          const monthCbs = month.querySelectorAll('.task-trigger');
+          const totalMonthTasks = monthCbs.length;
+          const checkedMonthTasks = Array.from(monthCbs).filter(cb => cb.checked).length;
+          const badge = month.querySelector('.acc-month-progress');
+
+          if (badge) {
+            badge.innerText = `${checkedMonthTasks}/${totalMonthTasks} validé`;
+          }
+
+          month.classList.toggle('active-month', totalMonthTasks > 0 && checkedMonthTasks === totalMonthTasks);
+        });
+      }
+
+      function updateStateAndSave() {
+        const states = getCurrentStates();
+        calculateAllProgress();
+        saveProgress(states);
+      }
+
+      checkboxes.forEach(cb => cb.addEventListener('change', updateStateAndSave));
+
+      if (supportsLocalStorage) {
+        window.addEventListener('storage', event => {
+          if (event.key === storageKey && event.newValue) {
+            loadSavedProgress();
+          }
+        });
+      }
+
+      exportBtn.addEventListener('click', () => {
+        const states = getCurrentStates();
+        const json = JSON.stringify(states, null, 2);
+        const dataStr = `data:text/json;charset=utf-8,${encodeURIComponent(json)}`;
+        const downloadAnchor = document.createElement('a');
+        downloadAnchor.setAttribute('href', dataStr);
+        downloadAnchor.setAttribute('download', 'progression_roadmap_streetwear_brice_az.json');
+        document.body.appendChild(downloadAnchor);
+        downloadAnchor.click();
+        downloadAnchor.remove();
+      });
+
+      themeToggle.addEventListener('click', () => {
+        const isLight = !document.body.classList.contains('light-mode');
+        setTheme(isLight);
+        saveTheme(isLight);
+      });
+
+      function handleNavHighlight() {
+        const scrollPosition = window.scrollY + 140;
+        let currentSectionId = '';
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        if (currentSectionId) {
+          navLinks.forEach(link => {
+            const isMatch = link.getAttribute('href') === `#${currentSectionId}`;
+            link.classList.toggle('active', isMatch);
+            link.setAttribute('aria-current', isMatch ? 'true' : 'false');
+          });
+        }
+      }
+
+      window.addEventListener('scroll', handleNavHighlight, { passive: true });
+      window.addEventListener('resize', handleNavHighlight);
+
+      loadTheme();
+      loadSavedProgress();
+      handleNavHighlight();
+    });
+  </script>
+</body>
+</html>
